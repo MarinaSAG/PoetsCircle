@@ -109,7 +109,7 @@ Route::get('/s1.5/{radio?}', [
     'as' => 'circunferencia'
 ]);
 
-//-------------------------------//
+//--------------------------------//
 
 Route::get('/d2.1', [
     'uses' => 'EstructurasdeControl@edadVotar',
@@ -136,7 +136,7 @@ Route::get('/d2.5', [
     'as' => 'calificacion'
 ]);
 
-//-------------------------------//
+//--------------------------------//
 
 Route::get('/c3.1', [
     'uses' => 'EstructurasdeControl@salarioAnual',
