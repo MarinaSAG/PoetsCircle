@@ -1,0 +1,14 @@
+@font-face{
+    font-family: heart;
+    src: url(../heart.ttf);
+}
+
+h1{
+    font-family: heart;
+    background-color: gray;
+    color: wheat;
+}
+
+main {
+    padding: 0px 10px;
+}
