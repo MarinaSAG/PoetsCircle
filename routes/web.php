@@ -136,7 +136,7 @@ Route::get('/d2.5', [
     'as' => 'calificacion'
 ]);
 
-//-----------------------------//
+//-------------------------------//
 
 Route::get('/c3.1', [
     'uses' => 'EstructurasdeControl@salarioAnual',
