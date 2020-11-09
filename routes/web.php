@@ -162,3 +162,5 @@ Route::get('/c3.5', [
     'uses' => 'EstructurasdeControl@tablaMultiplicar',
     'as' => 'tablaMultiplicar'
 ]);
+
+//--**--**--**//
