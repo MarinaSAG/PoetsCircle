@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use \Illuminate\Support\Facades\DB;
 
 class CreateUsuarios extends Migration
 {
@@ -26,6 +27,13 @@ class CreateUsuarios extends Migration
                 $table->timestamps();
             });
         }
+
+        DB::statement("DROP TABLE IF EXISTS games");
+        DB::statement("CREATE TABLE games (
+            idGame int(11) NOT NULL AUTO_INCREMENT,
+            game varchar(255) DEFAULT NULL,
+            PRIMARY KEY (idGame)
+        )");
     }
 
     public function down()
@@ -33,5 +41,7 @@ class CreateUsuarios extends Migration
         Schema::table('usuarios', function (Blueprint $table) {
             Schema::dropIfExists('usuarios');
         });
+
+        DB::statement("DROP TABLE IF EXISTS games");
     }
 }
