@@ -32,7 +32,7 @@ class Crud extends Controller
         $user = DB::table('usuarios')
             ->insert([
                 'Usuario' => $request->input('user'),
-                'pasword' => $request->input('password'),
+                'password' => $request->input('password'),
                 'key' => $request->input('key')
             ]);
             return redirect()->action('Crud@index');
