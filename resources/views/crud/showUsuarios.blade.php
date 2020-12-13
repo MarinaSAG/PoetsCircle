@@ -1,9 +1,9 @@
 @extends('layouts.master')
 @section('title', 'Mostrar Usuarios')
-@section('header', 'Migraciones')
+@section('header', 'Usuarios')
 @section('content')
     <div>
-        Agregar un nuevo usuario
+        <a href="{{action('Crud@create')}}">Agregar un nuevo usuario</a>
     </div>
     
     <center>

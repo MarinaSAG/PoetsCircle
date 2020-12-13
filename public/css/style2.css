@@ -12,3 +12,7 @@ h1{
 main {
     padding: 0px 10px;
 }
+
+a {
+    text-decoration: none;
+}
