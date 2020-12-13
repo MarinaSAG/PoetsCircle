@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($usuarios as $user);
+                @foreach($usuarios as $user)
                 <tr>
                     <th scope="row">{{$user->idUsuario}}</th>
                     <td>{{$user->Usuario}}</td>
@@ -29,6 +29,11 @@
                 @endforeach
             </tbody>
         </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </center>
 @stop
 
