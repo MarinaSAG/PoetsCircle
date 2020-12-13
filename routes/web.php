@@ -163,4 +163,9 @@ Route::get('/c3.5', [
     'as' => 'tablaMultiplicar'
 ]);
 
-//--**--**--**--//
+//--**--**--**--// RUTAS CRUD
+
+Route::get('/show', 'Crud@index');
+Route::get();
+Route::get();
+
