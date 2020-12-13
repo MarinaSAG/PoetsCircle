@@ -166,6 +166,6 @@ Route::get('/c3.5', [
 //--**--**--**--// RUTAS CRUD
 
 Route::get('/show', 'Crud@index');
-Route::get();
-Route::get();
+Route::get('/insert', 'Crud@create');
+Route::post('/save', 'Crud@store');
 
