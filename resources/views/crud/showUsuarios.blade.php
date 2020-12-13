@@ -2,9 +2,11 @@
 @section('title', 'Mostrar Usuarios')
 @section('header', 'Usuarios')
 @section('content')
-    <div>
-        <a href="{{action('Crud@create')}}">Agregar un nuevo usuario</a>
-    </div>
+    <style type="text/css">
+    a { color: #ffffff; font-size: 20px; font-family: sans-serif; }
+    </style>
+    <a href="{{action('Crud@create')}}">Agregar un nuevo usuario</a>
+
     
     <center>
         <table class="table table-hover table-dark">
