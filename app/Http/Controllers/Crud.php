@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class Crud extends Controller
 {
-    
+     
     public function index()
     {
         $user = DB::table('usuarios')
