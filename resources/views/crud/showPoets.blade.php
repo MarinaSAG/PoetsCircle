@@ -1,32 +1,36 @@
 @extends('layouts.master')
-@section('title', 'Mostrar Usuarios')
-@section('header', 'Alta de Usuario')
+@section('title', 'Mostrar Poetas')
+@section('header', 'Registros')
 @section('content')
     <style type="text/css">
     a { color: #ffffff; font-size: 20px; font-family: sans-serif; }
     </style>
-    <a href="{{action('Crud@create')}}"><img src="/images/create.png"> Agregar un nuevo usuario <img src="/images/create.png"></a>
+    <a href="{{action('Poets@create')}}"><img src="/images/create.png"> Agregar un nuevo registro <img src="/images/create.png"></a>
 
     
     <center>
         <table class="table table-hover table-dark">
             <thead>
                 <tr>
-                <th scope="col">Usuario</th>
-                <th scope="col">password</th>
-                <th scope="col">Llave</th>
-                <th scope="col">Actualizar</th>
-                <th scope="col">Borrar</th>
+                <th scope="col">poet_code</th>
+                <th scope="col">first_name</th>
+                <th scope="col">surname</th>
+                <th scope="col">adress</th>
+                <th scope="col">postcode</th>
+                <th scope="col">telephone_number</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($usuarios as $user)
+                @foreach($poetas as $poet)
                 <tr>
-                    <th scope="row">{{$user->Usuario}}</th>
-                    <td>{{$user->password}}</td>
-                    <td>{{$user->key}}</td>
-                    <td><a href="{{action('Crud@show', ['id'=>$user->idUsuario])}}"><img src="/images/reload.png"></a></td>
-                    <td><a href="{{action('Crud@destroy', ['id'=>$user->idUsuario])}}"><img src="/images/delete.png"></a></td>
+                    <th scope="row">{{$poet->poet_code}}</th>
+                    <td>{{$poet->first_name}}</td>
+                    <td>{{$poet->surname}}</td>
+                    <td>{{$poet->adress}}</td>
+                    <td>{{$poet->postcode}}</td>
+                    <td>{{$poet->telephone_number}}</td>
+                    <td><a href="{{action('Poets@show', ['code'=>$poet->poet_code])}}"><img src="/images/reload.png"></a></td>
+                    <td><a href="{{action('Poets@destroy', ['code'=>$poet->poet_code])}}"><img src="/images/delete.png"></a></td>
                 </tr>
                 @endforeach
             </tbody>
