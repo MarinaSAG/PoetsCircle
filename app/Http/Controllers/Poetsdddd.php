@@ -38,7 +38,7 @@ class Crud extends Controller
                 'postcode' => $request->input('postcode'),
                 'telephone_number' => $request->input('telephone_number')
             ]);
-            return redirect()->action('Crud@index')
+            return redirect()->action('Poets@index')
             ->with('status', 'Registro creado exitosamente');
 
     }
@@ -65,7 +65,7 @@ class Crud extends Controller
                 'postcode' => $request->input('postcode'),
                 'telephone_number' => $request->input('telephone_number')
             ]);
-            return redirect()->action('Crud@index')
+            return redirect()->action('Poets@index')
             ->with('status', 'Registro modificado exitosamente');
     }
 
@@ -76,7 +76,7 @@ class Crud extends Controller
             ->where('poet_code', '=', $id)
             ->delete();
 
-            return redirect()->action('Crud@index')
+            return redirect()->action('Poets@index')
             ->with('status', 'Registro eliminado exitosamente');
     }
 }

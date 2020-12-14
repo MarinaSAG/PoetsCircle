@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class Crud extends Controller
+class Poets extends Controller
 {
      
     public function index()
     {
-        $poet = DB::table('poetas')
+        $poet = DB::table('Usuarios')
             ->orderBy('poeta')
             ->get();
             

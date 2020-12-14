@@ -5,7 +5,7 @@
     <style type="text/css">
     a { color: #ffffff; font-size: 20px; font-family: sans-serif; }
     </style>
-    <a href="{{action('Poets@create')}}"><img src="/images/create.png"> Agregar un nuevo registro <img src="/images/create.png"></a>
+    <a href="{{action('Crud@create')}}"><img src="/images/create.png"> Agregar un nuevo registro <img src="/images/create.png"></a>
 
     
     <center>
@@ -29,8 +29,8 @@
                     <td>{{$poet->adress}}</td>
                     <td>{{$poet->postcode}}</td>
                     <td>{{$poet->telephone_number}}</td>
-                    <td><a href="{{action('Poets@show', ['code'=>$poet->poet_code])}}"><img src="/images/reload.png"></a></td>
-                    <td><a href="{{action('Poets@destroy', ['code'=>$poet->poet_code])}}"><img src="/images/delete.png"></a></td>
+                    <td><a href="{{action('Crud@show', ['code'=>$poet->poet_code])}}"><img src="/images/reload.png"></a></td>
+                    <td><a href="{{action('Crud@destroy', ['code'=>$poet->poet_code])}}"><img src="/images/delete.png"></a></td>
                 </tr>
                 @endforeach
             </tbody>
