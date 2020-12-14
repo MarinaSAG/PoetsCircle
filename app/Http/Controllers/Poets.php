@@ -10,7 +10,7 @@ class Poets extends Controller
      
     public function index()
     {
-        $poet = DB::table('Usuarios')
+        $poet = DB::table('poets')
             ->orderBy('poeta')
             ->get();
             

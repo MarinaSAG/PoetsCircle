@@ -10,12 +10,12 @@ class Crud extends Controller
      
     public function index()
     {
-        $poet = DB::table('poetas')
-            ->orderBy('poeta')
+        $user = DB::table('usuarios')
+            ->orderBy('Usuario')
             ->get();
             
-        return view ('crud.showPoets',[
-            'poetas' => $poet
+        return view ('crud.showUsuarios',[
+            'usuarios' => $user
         ]);
         
     }
@@ -23,60 +23,54 @@ class Crud extends Controller
 
     public function create()
     {
-        return view('crud.altaPoet');
+        return view('crud.altaUsuario');
     }
 
     
     public function store(Request $request)
     {
-        $poet = DB::table('poetas')
+        $user = DB::table('usuarios')
             ->insert([
-                'poet_code' => $request->input('poet_code'),
-                'first_name' => $request->input('first_name'),
-                'surname' => $request->input('surname'),
-                'adress' => $request->input('adress'),
-                'postcode' => $request->input('postcode'),
-                'telephone_number' => $request->input('telephone_number')
+                'Usuario' => $request->input('user'),
+                'password' => $request->input('password'),
+                'key' => $request->input('key')
             ]);
             return redirect()->action('Crud@index')
-            ->with('status', 'Registro creado exitosamente');
+            ->with('status', 'Usuario creado exitosamente');
 
     }
 
     
     public function show($id)
     {
-        $poet = DB::table('poetas')
-            ->where('poet_code', '=', $id)
+        $user = DB::table('usuarios')
+            ->where('idUsuario', '=', $id)
             ->first();
-            return view('crud.altaPoet', ['poet' => $poet]);
+            return view('crud.altaUsuario', ['user' => $user]);
     }
 
     
     public function update(Request $request)
     {
-        $poet = DB::table('poetas')
-            ->where('poet_code', '=', $request->input('code'))
+        $user = DB::table('usuarios')
+            ->where('idUsuario', '=', $request->input('id'))
             ->update([
-                'poet_code' => $request->input('poet_code'),
-                'first_name' => $request->input('first_name'),
-                'surname' => $request->input('surname'),
-                'adress' => $request->input('adress'),
-                'postcode' => $request->input('postcode'),
-                'telephone_number' => $request->input('telephone_number')
+                'Usuario' => $request->input('user'),
+                'password' => $request->input('password'),
+                'key' => $request->input('key')
             ]);
             return redirect()->action('Crud@index')
-            ->with('status', 'Registro modificado exitosamente');
+            ->with('status', 'Usuario modificado exitosamente');
     }
 
     
     public function destroy($id)
     {
-        $poet = DB::table('poetas')
-            ->where('poet_code', '=', $id)
+        $user = DB::table('usuarios')
+            ->where('idUsuario', '=', $id)
             ->delete();
 
             return redirect()->action('Crud@index')
-            ->with('status', 'Registro eliminado exitosamente');
+            ->with('status', 'Usuario eliminado exitosamente');
     }
 }

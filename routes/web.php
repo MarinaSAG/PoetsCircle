@@ -163,9 +163,18 @@ Route::get('/c3.5', [
     'as' => 'tablaMultiplicar'
 ]);
 
-//--**--**--**--// RUTAS CRUD POETS CIRCLE
+//--**--**--**--// RUTAS CRUD
 
-Route::get('/show', 'Poets@index');
+Route::get('/show', 'Crud@index');
+Route::get('/insert', 'Crud@create');
+Route::get('/detail/{id}', 'Crud@show');
+Route::post('/save', 'Crud@store');
+Route::post('/update', 'Crud@update');
+Route::get('/delete{id}', 'Crud@destroy');
+
+
+
+Route::get('/poets', 'Poets@index');
 Route::get('/insert', 'Poets@create');
 Route::get('/detail/{id}', 'Poets@show');
 Route::post('/save', 'Poets@store');
