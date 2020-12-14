@@ -5,14 +5,13 @@
     <style type="text/css">
     a { color: #ffffff; font-size: 20px; font-family: sans-serif; }
     </style>
-    <a href="{{action('Crud@create')}}">Agregar un nuevo usuario</a>
+    <a href="{{action('Crud@create')}}"><img src="/images/create.png"> Agregar un nuevo usuario <img src="/images/create.png"></a>
 
     
     <center>
         <table class="table table-hover table-dark">
             <thead>
                 <tr>
-                <th scope="col">idUsuario</th>
                 <th scope="col">Usuario</th>
                 <th scope="col">password</th>
                 <th scope="col">Llave</th>
@@ -23,8 +22,7 @@
             <tbody>
                 @foreach($usuarios as $user)
                 <tr>
-                    <th scope="row">{{$user->idUsuario}}</th>
-                    <td>{{$user->Usuario}}</td>
+                    <th scope="row">{{$user->Usuario}}</th>
                     <td>{{$user->password}}</td>
                     <td>{{$user->key}}</td>
                     <td><a href="{{action('Crud@show', ['id'=>$user->idUsuario])}}"><img src="/images/reload.png"></a></td>
@@ -34,11 +32,18 @@
             </tbody>
         </table>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        
     </center>
+
+    @if((session('status')))
+        <div class="alert alert-dark" role="alert">
+            {{session('status')}}
+        </div>
+    @endif
+    <br>
+    <br>
+    <br>
+    <br>
 @stop
 
 @section('footer')

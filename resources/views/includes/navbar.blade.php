@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="#">
             <img src="/images/m.png" width="30" height="30" class="d-inline-block align-top" 
             alt="" loading="lazy">
-            Usuarios registrados
+            Usuarios registrados 
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

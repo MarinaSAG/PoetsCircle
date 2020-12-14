@@ -36,7 +36,7 @@ class Crud extends Controller
                 'key' => $request->input('key')
             ]);
             return redirect()->action('Crud@index')
-            ->with('status', 'Usuario creado Exitosamente');
+            ->with('status', 'Usuario creado exitosamente');
 
     }
 
@@ -60,7 +60,7 @@ class Crud extends Controller
                 'key' => $request->input('key')
             ]);
             return redirect()->action('Crud@index')
-            ->with('status', 'Usuario modificado Exitosamente');
+            ->with('status', 'Usuario modificado exitosamente');
     }
 
     
@@ -71,6 +71,6 @@ class Crud extends Controller
             ->delete();
 
             return redirect()->action('Crud@index')
-            ->with('status', 'Usuario eliminado Exitosamente');
+            ->with('status', 'Usuario eliminado exitosamente');
     }
 }
