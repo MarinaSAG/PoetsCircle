@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title', 'Mostrar Usuarios')
-@section('header', 'Usuarios')
+@section('header', 'Alta de Usuario')
 @section('content')
     <style type="text/css">
     a { color: #ffffff; font-size: 20px; font-family: sans-serif; }
@@ -28,7 +28,7 @@
                     <td>{{$user->password}}</td>
                     <td>{{$user->key}}</td>
                     <td><a href="{{action('Crud@show', ['id'=>$user->idUsuario])}}"><img src="/images/reload.png"></a></td>
-                    <td><a href=""><img src="/images/delete.png"></a></td>
+                    <td><a href="{{action('Crud@destroy', ['id'=>$user->idUsuario])}}"><img src="/images/delete.png"></a></td>
                 </tr>
                 @endforeach
             </tbody>

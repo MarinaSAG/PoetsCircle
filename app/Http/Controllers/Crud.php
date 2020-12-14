@@ -35,7 +35,9 @@ class Crud extends Controller
                 'password' => $request->input('password'),
                 'key' => $request->input('key')
             ]);
-            return redirect()->action('Crud@index');
+            return redirect()->action('Crud@index')
+            ->with('status', 'Usuario creado Exitosamente');
+
     }
 
     
@@ -47,37 +49,28 @@ class Crud extends Controller
             return view('crud.altaUsuario', ['user' => $user]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    
+    public function update(Request $request)
     {
-        //
+        $user = DB::table('usuarios')
+            ->where('idUsuario', '=', $request->input('id'))
+            ->update([
+                'Usuario' => $request->input('user'),
+                'password' => $request->input('password'),
+                'key' => $request->input('key')
+            ]);
+            return redirect()->action('Crud@index')
+            ->with('status', 'Usuario modificado Exitosamente');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
-        //
+        $user = DB::table('usuarios')
+            ->where('idUsuario', '=', $id)
+            ->delete();
+
+            return redirect()->action('Crud@index')
+            ->with('status', 'Usuario eliminado Exitosamente');
     }
 }
