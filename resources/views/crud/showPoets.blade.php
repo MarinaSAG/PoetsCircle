@@ -21,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($poetas as $poet)
+                @foreach($poets as $poet)
                 <tr>
                     <th scope="row">{{$poet->poet_code}}</th>
                     <td>{{$poet->first_name}}</td>

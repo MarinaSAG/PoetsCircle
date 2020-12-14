@@ -177,9 +177,9 @@ Route::get('/delete{id}', 'Crud@destroy');
 
 Route::get('/poets', 'Poets@index');
 Route::get('/insert', 'Poets@create');
-Route::get('/detail/{id}', 'Poets@show');
+Route::get('/detail/{code}', 'Poets@show');
 Route::post('/save', 'Poets@store');
 Route::post('/update', 'Poets@update');
-Route::get('/delete{id}', 'Poets@destroy');
+Route::get('/delete{code}', 'Poets@destroy');
 
 

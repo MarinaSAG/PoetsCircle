@@ -15,7 +15,7 @@ class Poets extends Controller
             ->get();
             
         return view ('crud.showPoets',[
-            'poetas' => $poet
+            'poets' => $poet
         ]);
         
     }
@@ -44,10 +44,10 @@ class Poets extends Controller
     }
 
     
-    public function show($id)
+    public function show($code)
     {
         $poet = DB::table('poets')
-            ->where('poet_code', '=', $id)
+            ->where('poet_code', '=', $code)
             ->first();
             return view('crud.altaPoet', ['poet' => $poet]);
     }
@@ -70,10 +70,10 @@ class Poets extends Controller
     }
 
     
-    public function destroy($id)
+    public function destroy($code)
     {
         $poet = DB::table('poets')
-            ->where('poet_code', '=', $id)
+            ->where('poet_code', '=', $code)
             ->delete();
 
             return redirect()->action('Poets@index')
