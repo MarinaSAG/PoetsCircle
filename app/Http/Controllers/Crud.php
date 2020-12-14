@@ -38,15 +38,13 @@ class Crud extends Controller
             return redirect()->action('Crud@index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
-        //
+        $user = DB::table('usuarios')
+            ->where('idUsuario', '=', $id)
+            ->first();
+            return view('crud.altaUsuario', ['user' => $user]);
     }
 
     /**

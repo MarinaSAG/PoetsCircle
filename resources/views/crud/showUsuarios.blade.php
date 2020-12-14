@@ -16,8 +16,8 @@
                 <th scope="col">Usuario</th>
                 <th scope="col">password</th>
                 <th scope="col">Llave</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
+                <th scope="col">Actualizar</th>
+                <th scope="col">Borrar</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +27,8 @@
                     <td>{{$user->Usuario}}</td>
                     <td>{{$user->password}}</td>
                     <td>{{$user->key}}</td>
+                    <td><a href="{{action('Crud@show', ['id'=>$user->idUsuario])}}"><img src="/images/reload.png"></a></td>
+                    <td><a href=""><img src="/images/delete.png"></a></td>
                 </tr>
                 @endforeach
             </tbody>

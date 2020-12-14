@@ -2,6 +2,10 @@
 @section('title', 'Alta de Usuario')
 @section('header', 'Alta de Usuario')
 @section('content')
+    Alta de usuario
+    @php
+    dd($user)
+    @endphp
     <center>
         <form action="{{action('Crud@store')}}" method="POST">
             {{csrf_field()}}
@@ -16,9 +20,10 @@
             <label for="key">Key</label>
             <br>
             <input type="text" name="key">
-            <br><br><br>
+            <br><br>
             <input type="submit" name="submit" value="submit">
         </form>
+        <br>
     </center>
 @stop
 
