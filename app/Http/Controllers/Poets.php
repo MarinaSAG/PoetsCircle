@@ -11,7 +11,7 @@ class Poets extends Controller
     public function index()
     {
         $poet = DB::table('poets')
-            ->orderBy('poeta')
+            ->orderBy('poet_code')
             ->get();
             
         return view ('crud.showPoets',[
@@ -29,7 +29,7 @@ class Poets extends Controller
     
     public function store(Request $request)
     {
-        $poet = DB::table('poetas')
+        $poet = DB::table('poets')
             ->insert([
                 'poet_code' => $request->input('poet_code'),
                 'first_name' => $request->input('first_name'),
@@ -46,7 +46,7 @@ class Poets extends Controller
     
     public function show($id)
     {
-        $poet = DB::table('poetas')
+        $poet = DB::table('poets')
             ->where('poet_code', '=', $id)
             ->first();
             return view('crud.altaPoet', ['poet' => $poet]);
@@ -55,7 +55,7 @@ class Poets extends Controller
     
     public function update(Request $request)
     {
-        $poet = DB::table('poetas')
+        $poet = DB::table('poets')
             ->where('poet_code', '=', $request->input('code'))
             ->update([
                 'poet_code' => $request->input('poet_code'),
@@ -72,7 +72,7 @@ class Poets extends Controller
     
     public function destroy($id)
     {
-        $poet = DB::table('poetas')
+        $poet = DB::table('poets')
             ->where('poet_code', '=', $id)
             ->delete();
 
